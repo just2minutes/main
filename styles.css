@@ -15,10 +15,15 @@ header {
     gap: 10px; /* Add space between logo and menu */
     transition: transform 0.3s ease;
     border-radius: 4px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 100; /* Choose a value higher than other elements */
 }
 
 header.hide-on-scroll {
-    transform: translateY(-100%);
+    transform: translateY(-150%);
     transition: transform 0.3s ease;
 }
 
@@ -71,6 +76,7 @@ header nav {
 
 main {
     margin: 20px;
+    margin-top: 120px;
     padding: 20px;
     background-color: white;
     border-radius: 5px;
