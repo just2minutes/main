@@ -1,0 +1,173 @@
+html {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* This keeps everything level */
+    height: 120px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 0 20px;
+    margin: 0;
+    gap: 10px; /* Add space between logo and menu */
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+header.hide-on-scroll {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+header img {
+    max-height: 100px;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+header nav {
+    flex: 1;
+    position: static; /* Ensure nav is not absolutely positioned on desktop */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Align menu items to the right */
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    text-align: center;
+    margin-left: 0px;
+}
+
+.menu a:hover {
+    background: #388e3c;
+    color: #fff;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 2000px; /* For demonstration purposes */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Hide menu toggle by default */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Responsive styles for phones */
+@media (max-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+    }
+
+    header img {
+        max-height: 60px;
+        order: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: 0;
+        order: 3; /* Move icon to the far right */
+        z-index: 101;
+    }
+
+    header nav {
+        order: 2; /* Menu after logo, before icon (but hidden unless open) */
+        width: auto;
+        position: static;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 60vw;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 100;
+        padding: 10px 10px;
+        margin: 1%;
+        text-align: center; /* Center text in the menu */
+        border-radius: 4px;
+    }
+
+    .menu a {
+        display: block;
+        width: 100%;
+        background: #ffffff;
+        color: #000000;
+        padding: 10px 0;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+        text-align: center; /* Center text in the menu */
+    }
+
+    .menu a:hover {
+        background: #388e3c;
+        color: #fff;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+}
